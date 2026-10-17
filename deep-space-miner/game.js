@@ -316,7 +316,8 @@ function getLeagueInfo(rank) {
 const ASTEROID_TIERS = [
   {
     sectorName: "Karbon Kuşağı",
-    color: "#2a2d34", glow: "#4a5568", veinColor: "#718096",
+    color: "#282c37", glow: "#00f0ff", veinColor: "#64b5f6",
+    lightColor: "#475569", darkColor: "#0f172a",
     hpBase: 120, rewardBase: 42,
     subTypes: [
       "Ham Karbon Parçası",
@@ -328,7 +329,8 @@ const ASTEROID_TIERS = [
   },
   {
     sectorName: "Demir Havzası",
-    color: "#718096", glow: "#3182ce", veinColor: "#cbd5e0",
+    color: "#475569", glow: "#38bdf8", veinColor: "#bae6fd",
+    lightColor: "#94a3b8", darkColor: "#1e293b",
     hpBase: 400, rewardBase: 155,
     subTypes: [
       "Piritli Demir Çakılı",
@@ -340,7 +342,8 @@ const ASTEROID_TIERS = [
   },
   {
     sectorName: "Bakır Sahası",
-    color: "#b87333", glow: "#dd6b20", veinColor: "#fbd38d",
+    color: "#9a3412", glow: "#f97316", veinColor: "#fdba74",
+    lightColor: "#c2410c", darkColor: "#431407",
     hpBase: 1250, rewardBase: 500,
     subTypes: [
       "Oksitli Bakır Kütlesi",
@@ -352,7 +355,8 @@ const ASTEROID_TIERS = [
   },
   {
     sectorName: "Gümüş Damarı",
-    color: "#a0aec0", glow: "#e2e8f0", veinColor: "#ffffff",
+    color: "#64748b", glow: "#e2e8f0", veinColor: "#ffffff",
+    lightColor: "#cbd5e1", darkColor: "#1e293b",
     hpBase: 3800, rewardBase: 1650,
     subTypes: [
       "Ham Gümüş Şarapneli",
@@ -364,7 +368,8 @@ const ASTEROID_TIERS = [
   },
   {
     sectorName: "Titanyum Zırhı",
-    color: "#4a5568", glow: "#4299e1", veinColor: "#63b3ed",
+    color: "#334155", glow: "#38bdf8", veinColor: "#7dd3fc",
+    lightColor: "#64748b", darkColor: "#0f172a",
     hpBase: 11500, rewardBase: 5400,
     subTypes: [
       "Rutil Göktaşı",
@@ -376,7 +381,8 @@ const ASTEROID_TIERS = [
   },
   {
     sectorName: "Altın Maden Yatağı",
-    color: "#d69e2e", glow: "#ecc94b", veinColor: "#fefcbf",
+    color: "#ca8a04", glow: "#eab308", veinColor: "#fef08a",
+    lightColor: "#facc15", darkColor: "#422006",
     hpBase: 35000, rewardBase: 17500,
     subTypes: [
       "Altın Tozu Göktaşı",
@@ -388,7 +394,8 @@ const ASTEROID_TIERS = [
   },
   {
     sectorName: "Platin & Osmiyum",
-    color: "#4fd1c5", glow: "#319795", veinColor: "#b2f5ea",
+    color: "#0d9488", glow: "#2dd4bf", veinColor: "#99f6e4",
+    lightColor: "#14b8a6", darkColor: "#042f2e",
     hpBase: 105000, rewardBase: 55000,
     subTypes: [
       "Ham Platin Şarapneli",
@@ -400,7 +407,8 @@ const ASTEROID_TIERS = [
   },
   {
     sectorName: "Kozmik Elmas & Safir",
-    color: "#63b3ed", glow: "#3182ce", veinColor: "#ebf8ff",
+    color: "#0284c7", glow: "#38bdf8", veinColor: "#e0f2fe",
+    lightColor: "#38bdf8", darkColor: "#082f49",
     hpBase: 310000, rewardBase: 170000,
     subTypes: [
       "Kristalize Karbon",
@@ -412,7 +420,8 @@ const ASTEROID_TIERS = [
   },
   {
     sectorName: "Radyoaktif Uranyum",
-    color: "#38a169", glow: "#48bb78", veinColor: "#9ae6b4",
+    color: "#15803d", glow: "#22c55e", veinColor: "#86efac",
+    lightColor: "#16a34a", darkColor: "#052e16",
     hpBase: 920000, rewardBase: 520000,
     subTypes: [
       "Işıyan Uranyum Tozu",
@@ -424,7 +433,8 @@ const ASTEROID_TIERS = [
   },
   {
     sectorName: "Plazma & İyon",
-    color: "#319795", glow: "#00f0ff", veinColor: "#80ffff",
+    color: "#0891b2", glow: "#06b6d4", veinColor: "#a5f3fc",
+    lightColor: "#22d3ee", darkColor: "#083344",
     hpBase: 2700000, rewardBase: 1600000,
     subTypes: [
       "İyonize Gaz Kümesi",
@@ -436,7 +446,8 @@ const ASTEROID_TIERS = [
   },
   {
     sectorName: "Karanlık Madde & Boşluk",
-    color: "#1a202c", glow: "#9f7aea", veinColor: "#d6bcfa",
+    color: "#180d2b", glow: "#a855f7", veinColor: "#e9d5ff",
+    lightColor: "#3b1d60", darkColor: "#090314",
     hpBase: 8000000, rewardBase: 4900000,
     subTypes: [
       "Negatif Kütle Parçası",
@@ -448,7 +459,8 @@ const ASTEROID_TIERS = [
   },
   {
     sectorName: "Galaktik Tekillik",
-    color: "#171923", glow: "#e53e3e", veinColor: "#feb2b2",
+    color: "#18181b", glow: "#ef4444", veinColor: "#fca5a5",
+    lightColor: "#450a0a", darkColor: "#000000",
     hpBase: 24000000, rewardBase: 15500000,
     subTypes: [
       "Pulsar Tozu",
@@ -500,8 +512,10 @@ let megaLaserEffect = {
   width: 40
 };
 
-// Parçacıklar ve Uçuşan Yazılar
+// Parçacıklar, Şarapneller, Şok Dalgaları ve Uçuşan Yazılar
 let particles = [];
+let shards = [];
+let shockwaves = [];
 let floatingTexts = [];
 let stars = [];
 let dronesList = [];
@@ -636,30 +650,114 @@ function spawnAsteroid(tierOverride = null) {
     asteroidName = tier.bossName;
     reward = Math.floor(reward * 1.5); // Boss ekstra ganimeti
     window.sounds.playBossAlarm();
-    showToast(`⚠️ DİKKAT! ${tier.sectorName.toUpperCase()} BOSS'U SAHNEDE!`);
+    showToast(`⚠️ DİKKAT! ${tier.sectorName.toUpperCase()} BOSS'U SAHNEDE!`, true);
   } else {
     asteroidName = tier.subTypes[stepInTier] || tier.subTypes[0];
   }
 
-  // Şekil (Jagged polygon)
-  const numVertices = 16 + Math.floor(Math.random() * 8);
+  // Şekil (28 Noktalı Çok-Aşamalı Organik Kaya Konturu)
+  const numVertices = 28;
   const vertices = [];
-  const baseR = (isBoss ? 135 : 100) + Math.random() * 20;
+  const baseR = (isBoss ? 135 : 100) + Math.random() * 16;
+
+  // Organik girinti/çıkıntılar için çok-dalgalı gürültü profili
+  const p1 = Math.random() * 2 + 2; // Ana kaya lobları
+  const p2 = Math.random() * 3 + 4; // Orta çıkıntılar
+  const p3 = 8; // Küçük kaya sivrilikleri
 
   for (let i = 0; i < numVertices; i++) {
     const angle = (i / numVertices) * Math.PI * 2;
-    const r = baseR + (Math.random() * 26 - 13);
-    vertices.push({ x: Math.cos(angle) * r, y: Math.sin(angle) * r });
+    const wave1 = Math.sin(angle * p1) * 16;
+    const wave2 = Math.cos(angle * p2) * 8;
+    const wave3 = (Math.sin(angle * p3) * 5) + (Math.random() * 8 - 4);
+    const r = Math.max(baseR * 0.72, baseR + wave1 + wave2 + wave3);
+    vertices.push({ x: Math.cos(angle) * r, y: Math.sin(angle) * r, r: r, angle: angle });
   }
 
-  // Çatlak çizgileri
+  // 3D Kraterler (Gölge, hilal parıltı ve merkezi tepe)
+  const craters = [];
+  const numCraters = isBoss ? 10 : 7;
+  for (let i = 0; i < numCraters; i++) {
+    const cDist = (Math.random() * 0.62 + 0.1) * baseR;
+    const cAngle = Math.random() * Math.PI * 2;
+    craters.push({
+      x: Math.cos(cAngle) * cDist,
+      y: Math.sin(cAngle) * cDist,
+      radius: Math.random() * 15 + 8,
+      hasPeak: Math.random() < 0.65
+    });
+  }
+
+  // Yüzeydeki Kaya Yükseltileri (Surface Boulders)
+  const boulders = [];
+  for (let i = 0; i < (isBoss ? 14 : 9); i++) {
+    const bDist = (Math.random() * 0.68 + 0.1) * baseR;
+    const bAngle = Math.random() * Math.PI * 2;
+    boulders.push({
+      x: Math.cos(bAngle) * bDist,
+      y: Math.sin(bAngle) * bDist,
+      size: Math.random() * 4 + 2
+    });
+  }
+
+  // Işıltılı Değerli Maden Damarları (Organic Branching Veins)
+  const veins = [];
+  const numVeins = isBoss ? 6 : 4;
+  for (let i = 0; i < numVeins; i++) {
+    const startAng = (i / numVeins) * Math.PI * 2 + (Math.random() * 0.4 - 0.2);
+    const startDist = (Math.random() * 0.25 + 0.1) * baseR;
+    let px = Math.cos(startAng) * startDist;
+    let py = Math.sin(startAng) * startDist;
+    const points = [{ x: px, y: py }];
+    const segs = 3 + Math.floor(Math.random() * 3);
+    for (let s = 0; s < segs; s++) {
+      const stepAng = startAng + (Math.random() * 1.2 - 0.6);
+      const stepLen = (Math.random() * 0.22 + 0.12) * baseR;
+      px += Math.cos(stepAng) * stepLen;
+      py += Math.sin(stepAng) * stepLen;
+      points.push({ x: px, y: py });
+    }
+    veins.push(points);
+  }
+
+  // Parlayan Kristal Maden Noktaları (Gems)
+  const crystals = [];
+  const numCrystals = isBoss ? 8 : 5;
+  for (let i = 0; i < numCrystals; i++) {
+    const crAng = Math.random() * Math.PI * 2;
+    const crDist = (Math.random() * 0.65 + 0.15) * baseR;
+    crystals.push({
+      x: Math.cos(crAng) * crDist,
+      y: Math.sin(crAng) * crDist,
+      size: Math.random() * 5 + 3,
+      sparklePhase: Math.random() * Math.PI * 2
+    });
+  }
+
+  // Çatlaklar (Hasar aldıkça akkor magma/enerji parlayan yarıklar)
   const cracks = [];
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 8; i++) {
+    const endV = vertices[Math.floor(Math.random() * vertices.length)];
     cracks.push({
-      startIdx: Math.floor(Math.random() * vertices.length),
-      midX: (Math.random() - 0.5) * 45,
-      midY: (Math.random() - 0.5) * 45,
-      threshold: 0.85 - i * 0.12
+      startX: (Math.random() - 0.5) * 20,
+      startY: (Math.random() - 0.5) * 20,
+      midX: (Math.random() - 0.5) * (baseR * 0.5),
+      midY: (Math.random() - 0.5) * (baseR * 0.5),
+      endX: endV.x * 0.95,
+      endY: endV.y * 0.95,
+      threshold: 0.88 - i * 0.11
+    });
+  }
+
+  // Asteroit etrafında yörüngede dönen mikro-parçacıklar (Space Dust / Debris)
+  const debris = [];
+  for (let i = 0; i < 7; i++) {
+    debris.push({
+      angle: (i / 7) * Math.PI * 2,
+      distX: baseR * (1.3 + (i % 3) * 0.2),
+      distY: baseR * (0.55 + (i % 2) * 0.15),
+      speed: 0.007 + (i % 3) * 0.003,
+      size: Math.random() * 2.2 + 1.2
     });
   }
 
@@ -672,6 +770,8 @@ function spawnAsteroid(tierOverride = null) {
     bossTimer: 40,
     maxBossTimer: 40,
     color: isBoss ? "#4a0e17" : tier.color,
+    lightColor: isBoss ? "#ff6b81" : (tier.lightColor || "#94a3b8"),
+    darkColor: isBoss ? "#2b050d" : (tier.darkColor || "#0f172a"),
     glow: isBoss ? "#ff0044" : tier.glow,
     veinColor: isBoss ? "#ff3366" : tier.veinColor,
     maxHp: maxHp,
@@ -680,9 +780,15 @@ function spawnAsteroid(tierOverride = null) {
     radius: baseR,
     rotation: 0,
     rotSpeed: (Math.random() * 0.004 + 0.002) * (Math.random() < 0.5 ? 1 : -1),
-    scale: 1,
+    scale: 0.25, // Doğuş / warp-in efekti
+    hitFlash: 0,
     vertices: vertices,
-    cracks: cracks
+    craters: craters,
+    boulders: boulders,
+    veins: veins,
+    crystals: crystals,
+    cracks: cracks,
+    debris: debris
   };
 
   updateTargetInfoUI();
@@ -696,33 +802,56 @@ function damageAsteroid(amount, isCrit = false, x = null, y = null, isAuto = fal
     finalAmount *= 1.25; // %25 İyon Alanı zırh eritme bonusu
   }
   currentAsteroid.currentHp -= finalAmount;
+  currentAsteroid.hitFlash = 1.0;
+
+  const hitX = x !== null ? x : canvas.width / 2;
+  const hitY = y !== null ? y : canvas.height / 2;
+
+  // Lazer vuruşundan uçuşan minik kıvılcımlar
+  const sparkCount = isCrit ? 10 : 4;
+  for (let i = 0; i < sparkCount; i++) {
+    const ang = Math.random() * Math.PI * 2;
+    const spd = Math.random() * (isCrit ? 9 : 5) + 1.5;
+    particles.push({
+      x: hitX,
+      y: hitY,
+      vx: Math.cos(ang) * spd,
+      vy: Math.sin(ang) * spd,
+      size: Math.random() * 3 + 1.5,
+      color: isCrit ? "#00f0ff" : (Math.random() < 0.5 ? "#ffffff" : currentAsteroid.veinColor),
+      life: 1.0,
+      decay: Math.random() * 0.04 + 0.025
+    });
+  }
+
+  // Kritik vuruşta küçük şarapnel kopması
+  if (isCrit && Math.random() < 0.6) {
+    shards.push({
+      x: hitX,
+      y: hitY,
+      vx: (Math.random() - 0.5) * 7,
+      vy: (Math.random() - 0.5) * 7,
+      rotation: Math.random() * Math.PI * 2,
+      rotSpeed: (Math.random() - 0.5) * 0.3,
+      size: Math.random() * 6 + 3,
+      color: currentAsteroid.veinColor,
+      lightColor: "#ffffff",
+      life: 0.9,
+      decay: 0.03
+    });
+  }
 
   if (!isAuto) {
     currentAsteroid.scale = 0.94;
-
-    const hitX = x !== null ? x : canvas.width / 2;
-    const hitY = y !== null ? y : canvas.height / 2;
-
-    const particleColor = isCrit ? "#00f0ff" : currentAsteroid.veinColor;
-    for (let i = 0; i < (isCrit ? 14 : 6); i++) {
-      particles.push({
-        x: hitX,
-        y: hitY,
-        vx: (Math.random() - 0.5) * (isCrit ? 10 : 6),
-        vy: (Math.random() - 0.5) * (isCrit ? 10 : 6),
-        size: Math.random() * 4 + 2,
-        color: particleColor,
-        life: 1.0,
-        decay: Math.random() * 0.03 + 0.02
-      });
-    }
+    window.sounds.playMineHit(isCrit);
+    screenShake = isCrit ? 6 : 2;
 
     floatingTexts.push({
-      text: (isCrit ? "KRİTİK! " : "") + formatNumber(amount),
-      x: hitX + (Math.random() * 30 - 15),
+      text: (isCrit ? "KRİTİK! " : "") + formatNumber(Math.floor(finalAmount)),
+      x: hitX + (Math.random() * 26 - 13),
       y: hitY - 10,
-      vy: -2,
-      color: isCrit ? "#00f0ff" : "#ffd700",
+      vy: -1.8,
+      color: isCrit ? "#00f0ff" : "#fff",
       size: isCrit ? 22 : 16,
       life: 1.0,
       isCrit: isCrit
@@ -738,7 +867,7 @@ function damageAsteroid(amount, isCrit = false, x = null, y = null, isAuto = fal
 
 function destroyAsteroid() {
   window.sounds.playExplode();
-  screenShake = currentAsteroid.isBoss ? 24 : 15;
+  screenShake = currentAsteroid.isBoss ? 26 : 16;
 
   const earned = currentAsteroid.reward;
   state.credits += earned;
@@ -750,18 +879,52 @@ function destroyAsteroid() {
   const centerX = canvas.width / 2;
   const centerY = canvas.height / 2;
 
-  // Boss için çift patlama
-  const countP = currentAsteroid.isBoss ? 80 : 40;
+  // 1. Şok Dalgası Patlaması (Shockwave Blast)
+  shockwaves.push({
+    x: centerX,
+    y: centerY,
+    radius: 12,
+    maxRadius: currentAsteroid.isBoss ? 250 : 180,
+    color: currentAsteroid.glow,
+    life: 1.0,
+    speed: currentAsteroid.isBoss ? 9 : 7
+  });
+
+  // 2. Kaya Şarapnelleri (Uçuşan ve dönen büyük taş parçaları)
+  const numShards = currentAsteroid.isBoss ? 24 : 14;
+  for (let i = 0; i < numShards; i++) {
+    const ang = Math.random() * Math.PI * 2;
+    const spd = Math.random() * (currentAsteroid.isBoss ? 11 : 8) + 2.5;
+    const shardSize = Math.random() * 12 + 6;
+    shards.push({
+      x: centerX + Math.cos(ang) * (Math.random() * 25),
+      y: centerY + Math.sin(ang) * (Math.random() * 25),
+      vx: Math.cos(ang) * spd,
+      vy: Math.sin(ang) * spd,
+      rotation: Math.random() * Math.PI * 2,
+      rotSpeed: (Math.random() - 0.5) * 0.25,
+      size: shardSize,
+      color: Math.random() < 0.4 ? currentAsteroid.veinColor : currentAsteroid.color,
+      lightColor: currentAsteroid.lightColor,
+      life: 1.0,
+      decay: Math.random() * 0.02 + 0.014
+    });
+  }
+
+  // 3. Akkor Kıvılcım & Ateş Parçacıkları (Embers & Sparks)
+  const countP = currentAsteroid.isBoss ? 70 : 40;
   for (let i = 0; i < countP; i++) {
+    const ang = Math.random() * Math.PI * 2;
+    const spd = Math.random() * 12 + 2;
     particles.push({
       x: centerX,
       y: centerY,
-      vx: (Math.random() - 0.5) * (currentAsteroid.isBoss ? 22 : 16),
-      vy: (Math.random() - 0.5) * (currentAsteroid.isBoss ? 22 : 16),
-      size: Math.random() * 7 + 3,
-      color: Math.random() < 0.5 ? currentAsteroid.color : currentAsteroid.veinColor,
+      vx: Math.cos(ang) * spd,
+      vy: Math.sin(ang) * spd,
+      size: Math.random() * 5 + 2,
+      color: Math.random() < 0.5 ? currentAsteroid.veinColor : (Math.random() < 0.5 ? "#ffd700" : "#ff3366"),
       life: 1.0,
-      decay: Math.random() * 0.02 + 0.015
+      decay: Math.random() * 0.025 + 0.015
     });
   }
 
@@ -777,7 +940,7 @@ function destroyAsteroid() {
   });
 
   if (currentAsteroid.isBoss) {
-    showToast("🎉 BOSS İMHA EDİLDİ! Muazzam Kredi Kazanıldı!");
+    showToast("👑 BOSS İMHA EDİLDİ! Muazzam Kredi Kazanıldı!", true);
   }
 
   spawnAsteroid();
@@ -981,57 +1144,309 @@ function render() {
   if (currentAsteroid.scale < 1) {
     currentAsteroid.scale += (1 - currentAsteroid.scale) * 0.15;
   }
+  if (currentAsteroid.hitFlash > 0) {
+    currentAsteroid.hitFlash *= 0.85;
+    if (currentAsteroid.hitFlash < 0.04) currentAsteroid.hitFlash = 0;
+  }
+
+  const v = currentAsteroid.vertices;
+  const baseR = currentAsteroid.radius;
+  const hpRatio = currentAsteroid.currentHp / currentAsteroid.maxHp;
+
+  // 3A. Yörünge Mikro-Parçacıkları (Arka Katman: Y ekseni negatif olanlar)
+  if (currentAsteroid.debris) {
+    ctx.save();
+    currentAsteroid.debris.forEach(d => {
+      d.angle += d.speed;
+      const dy = Math.sin(d.angle) * d.distY;
+      if (dy < 0) {
+        const dx = Math.cos(d.angle) * d.distX;
+        ctx.fillStyle = "rgba(180, 210, 240, 0.35)";
+        ctx.beginPath();
+        ctx.arc(centerX + dx, centerY + dy, d.size * 0.8, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    });
+    ctx.restore();
+  }
 
   ctx.save();
   ctx.translate(centerX, centerY);
   ctx.rotate(currentAsteroid.rotation);
   ctx.scale(currentAsteroid.scale, currentAsteroid.scale);
 
-  ctx.shadowColor = currentAsteroid.glow;
-  ctx.shadowBlur = currentAsteroid.isBoss ? 45 : 30;
-
-  // Gövde
-  ctx.fillStyle = currentAsteroid.color;
-  ctx.beginPath();
-  const v = currentAsteroid.vertices;
-  if (v.length > 0) {
-    ctx.moveTo(v[0].x, v[0].y);
-    for (let i = 1; i < v.length; i++) {
-      ctx.lineTo(v[i].x, v[i].y);
+  // YOLU ÇİZ (Pürüzsüz organik kayalık kontur)
+  function traceAsteroidPath() {
+    ctx.beginPath();
+    if (!v || v.length === 0) return;
+    const len = v.length;
+    const firstMidX = (v[0].x + v[1].x) / 2;
+    const firstMidY = (v[0].y + v[1].y) / 2;
+    ctx.moveTo(firstMidX, firstMidY);
+    for (let i = 1; i < len; i++) {
+      const next = v[(i + 1) % len];
+      const midX = (v[i].x + next.x) / 2;
+      const midY = (v[i].y + next.y) / 2;
+      ctx.quadraticCurveTo(v[i].x, v[i].y, midX, midY);
     }
+    const lastMidX = (v[len - 1].x + v[0].x) / 2;
+    const lastMidY = (v[len - 1].y + v[0].y) / 2;
+    ctx.quadraticCurveTo(v[0].x, v[0].y, firstMidX, firstMidY);
+    ctx.closePath();
+  }
+
+  // Dinamik Işıklandırma & Aura Yoğunluğu (Daha Parlak ve Canlı)
+  const timeNow = Date.now() / 320;
+  const breathPulse = Math.sin(timeNow) * 6;
+  const isBoss = currentAsteroid.isBoss;
+  const damageIntensity = (1 - hpRatio) * 14;
+  const flashGlow = (currentAsteroid.hitFlash || 0) * 28;
+  const dynamicBlur = (isBoss ? 48 : 32) + breathPulse + damageIntensity + flashGlow;
+
+  // Çift Katmanlı Atmosferik Dış Parıltı (Kozmik Korona)
+  ctx.save();
+  traceAsteroidPath();
+  ctx.shadowColor = currentAsteroid.glow;
+  ctx.shadowBlur = dynamicBlur;
+  ctx.strokeStyle = currentAsteroid.glow;
+  ctx.lineWidth = isBoss ? 3.5 : 2.5;
+  ctx.stroke();
+
+  // İç yoğun çekirdek çizgisi
+  ctx.shadowBlur = dynamicBlur * 0.4;
+  ctx.strokeStyle = currentAsteroid.veinColor;
+  ctx.lineWidth = 1.2;
+  ctx.stroke();
+  ctx.restore();
+
+  // 3B. 3D Küresel Hacimsel Aydınlatma (Işık sol-üstten vurur)
+  ctx.save();
+  traceAsteroidPath();
+  ctx.clip(); // Tüm dokular, kraterler ve madenler bu kayanın içinde kalır
+
+  const lightX = -baseR * 0.38;
+  const lightY = -baseR * 0.42;
+  const rockGrad = ctx.createRadialGradient(
+    lightX, lightY, baseR * 0.06,
+    0, 0, baseR * 1.25
+  );
+  rockGrad.addColorStop(0, currentAsteroid.lightColor || "#94a3b8");
+  rockGrad.addColorStop(0.35, currentAsteroid.color);
+  rockGrad.addColorStop(0.74, currentAsteroid.darkColor || "#0f172a");
+  rockGrad.addColorStop(1, "#02040a");
+
+  ctx.fillStyle = rockGrad;
+  ctx.fill();
+
+  // 3C. Yüzey Kayalık Fasetleri (Chiseled Rock Shading)
+  ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
+  for (let i = 0; i < v.length; i += 4) {
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(v[i].x, v[i].y);
+    ctx.lineTo(v[(i + 2) % v.length].x, v[(i + 2) % v.length].y);
+    ctx.closePath();
+    ctx.fill();
+  }
+  ctx.fillStyle = "rgba(0, 0, 0, 0.16)";
+  for (let i = 2; i < v.length; i += 4) {
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(v[i].x, v[i].y);
+    ctx.lineTo(v[(i + 2) % v.length].x, v[(i + 2) % v.length].y);
     ctx.closePath();
     ctx.fill();
   }
 
-  // İç Dokular & Damarlar
-  ctx.shadowBlur = 0;
-  ctx.strokeStyle = currentAsteroid.veinColor;
-  ctx.lineWidth = 2.5;
-  ctx.beginPath();
-  for (let i = 0; i < v.length; i += 3) {
-    ctx.moveTo(v[i].x * 0.4, v[i].y * 0.4);
-    ctx.lineTo(v[(i + 2) % v.length].x * 0.85, v[(i + 2) % v.length].y * 0.85);
-  }
-  ctx.stroke();
+  // 3D Kraterler (Detailed Craters with Specular Lips & Central Peaks)
+  if (currentAsteroid.craters) {
+    currentAsteroid.craters.forEach(cr => {
+      // Dış derinlik gölgesi
+      ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
+      ctx.beginPath();
+      ctx.arc(cr.x + 1.5, cr.y + 1.5, cr.radius * 1.08, 0, Math.PI * 2);
+      ctx.fill();
 
-  // Çatlaklar
-  const hpRatio = currentAsteroid.currentHp / currentAsteroid.maxHp;
-  ctx.strokeStyle = "rgba(0, 0, 0, 0.75)";
-  ctx.lineWidth = 3;
-  currentAsteroid.cracks.forEach(c => {
-    if (hpRatio < c.threshold) {
-      const p = v[c.startIdx];
-      if (p) {
+      // Krater Çukuru Tabanı
+      const craterGrad = ctx.createRadialGradient(
+        cr.x - cr.radius * 0.25, cr.y - cr.radius * 0.25, cr.radius * 0.1,
+        cr.x, cr.y, cr.radius
+      );
+      craterGrad.addColorStop(0, "rgba(2, 4, 10, 0.9)");
+      craterGrad.addColorStop(1, "rgba(10, 16, 30, 0.65)");
+      ctx.fillStyle = craterGrad;
+      ctx.beginPath();
+      ctx.arc(cr.x, cr.y, cr.radius, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Kraterin Işık Alan Üst Kenarlığı (Hilal parıltı)
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.35)";
+      ctx.lineWidth = 2.0;
+      ctx.beginPath();
+      ctx.arc(cr.x - 1, cr.y - 1, cr.radius * 0.96, Math.PI * 0.8, Math.PI * 1.8);
+      ctx.stroke();
+
+      // Kraterin Alt Derinlik Gölgesi
+      ctx.strokeStyle = "rgba(0, 0, 0, 0.9)";
+      ctx.lineWidth = 2.6;
+      ctx.beginPath();
+      ctx.arc(cr.x + 1.2, cr.y + 1.2, cr.radius * 0.92, -Math.PI * 0.2, Math.PI * 0.8);
+      ctx.stroke();
+
+      // Krater İçi Merkezi Tepe (Central Peak)
+      if (cr.hasPeak) {
+        ctx.fillStyle = "rgba(255, 255, 255, 0.4)";
         ctx.beginPath();
-        ctx.moveTo(0, 0);
-        ctx.lineTo(c.midX, c.midY);
-        ctx.lineTo(p.x * 0.9, p.y * 0.9);
+        ctx.arc(cr.x - 0.5, cr.y - 0.5, cr.radius * 0.22, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
+        ctx.beginPath();
+        ctx.arc(cr.x + 0.5, cr.y + 0.5, cr.radius * 0.2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    });
+  }
+
+  // Yüzeydeki Kaya Blokları (Boulders)
+  if (currentAsteroid.boulders) {
+    currentAsteroid.boulders.forEach(b => {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.65)";
+      ctx.beginPath();
+      ctx.arc(b.x + 1, b.y + 1, b.size, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = currentAsteroid.lightColor || "rgba(255, 255, 255, 0.3)";
+      ctx.beginPath();
+      ctx.arc(b.x - 0.8, b.y - 0.8, b.size * 0.8, 0, Math.PI * 2);
+      ctx.fill();
+    });
+  }
+
+  // Işıltılı Değerli Maden Damarları (Luminous Ore Veins)
+  if (currentAsteroid.veins) {
+    currentAsteroid.veins.forEach(pts => {
+      if (pts.length < 2) return;
+      // Dış Parıltı
+      ctx.strokeStyle = currentAsteroid.veinColor;
+      ctx.lineWidth = 3.6;
+      ctx.globalAlpha = 0.7;
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x, pts[0].y);
+      for (let p = 1; p < pts.length; p++) {
+        ctx.lineTo(pts[p].x, pts[p].y);
+      }
+      ctx.stroke();
+
+      // İç Beyaz Neon Çekirdek
+      ctx.strokeStyle = "#ffffff";
+      ctx.lineWidth = 1.3;
+      ctx.globalAlpha = 0.95;
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x, pts[0].y);
+      for (let p = 1; p < pts.length; p++) {
+        ctx.lineTo(pts[p].x, pts[p].y);
+      }
+      ctx.stroke();
+      ctx.globalAlpha = 1.0;
+    });
+  }
+
+  // Parlayan Kristal Nodülleri & 4 Köşeli Yıldız Parıltısı (Gems & Cross Glints)
+  if (currentAsteroid.crystals) {
+    const timeG = Date.now() / 340;
+    currentAsteroid.crystals.forEach(gem => {
+      const pulse = (Math.sin(timeG + gem.sparklePhase) + 1) / 2;
+      ctx.save();
+      ctx.fillStyle = currentAsteroid.veinColor;
+      ctx.shadowColor = currentAsteroid.glow;
+      ctx.shadowBlur = 12 * pulse + 5;
+      ctx.beginPath();
+      const s = gem.size * (0.8 + pulse * 0.4);
+      ctx.moveTo(gem.x, gem.y - s);
+      ctx.lineTo(gem.x + s * 0.75, gem.y);
+      ctx.lineTo(gem.x, gem.y + s);
+      ctx.lineTo(gem.x - s * 0.75, gem.y);
+      ctx.closePath();
+      ctx.fill();
+
+      // Yıldız Işıltısı (Cross Glint)
+      if (pulse > 0.4) {
+        ctx.strokeStyle = "#ffffff";
+        ctx.lineWidth = 1.2;
+        ctx.globalAlpha = (pulse - 0.4) * 1.6;
+        const gLen = s * 1.8;
+        ctx.beginPath();
+        ctx.moveTo(gem.x - gLen, gem.y);
+        ctx.lineTo(gem.x + gLen, gem.y);
+        ctx.moveTo(gem.x, gem.y - gLen);
+        ctx.lineTo(gem.x, gem.y + gLen);
         ctx.stroke();
       }
-    }
-  });
 
+      ctx.restore();
+    });
+  }
+
+  // Akkor Magma / Enerji Hasar Çatlakları
+  if (currentAsteroid.cracks && hpRatio < 0.9) {
+    currentAsteroid.cracks.forEach(c => {
+      if (hpRatio < c.threshold) {
+        ctx.save();
+        const lavaColor = hpRatio < 0.3 ? "#ff1a40" : (hpRatio < 0.6 ? "#ff5500" : "#ffaa00");
+        const lavaGlow = hpRatio < 0.3 ? "#ff0033" : "#ff8800";
+        ctx.strokeStyle = lavaColor;
+        ctx.shadowColor = lavaGlow;
+        ctx.shadowBlur = 16;
+        ctx.lineWidth = hpRatio < 0.3 ? 4.5 : 3.2;
+        ctx.beginPath();
+        ctx.moveTo(c.startX, c.startY);
+        ctx.lineTo(c.midX, c.midY);
+        ctx.lineTo(c.endX, c.endY);
+        ctx.stroke();
+
+        ctx.strokeStyle = "#fffdf0";
+        ctx.lineWidth = 1.4;
+        ctx.shadowBlur = 0;
+        ctx.stroke();
+        ctx.restore();
+      }
+    });
+  }
+
+  // Lazer Vuruş Parlaması (Hit Flash)
+  if (currentAsteroid.hitFlash > 0) {
+    ctx.fillStyle = `rgba(255, 255, 255, ${currentAsteroid.hitFlash * 0.4})`;
+    ctx.fill();
+  }
+
+  ctx.restore(); // Clip sonu
+
+  // Kenar Yansıma Işığı (Fresnel Rim Lighting)
+  ctx.save();
+  traceAsteroidPath();
+  ctx.strokeStyle = currentAsteroid.glow;
+  ctx.lineWidth = 2.0;
+  ctx.stroke();
   ctx.restore();
+
+  ctx.restore(); // Translate/rotate sonu
+
+  // 3D. Yörünge Mikro-Parçacıkları (Ön Katman: Y ekseni pozitif olanlar)
+  if (currentAsteroid.debris) {
+    ctx.save();
+    currentAsteroid.debris.forEach(d => {
+      const dy = Math.sin(d.angle) * d.distY;
+      if (dy >= 0) {
+        const dx = Math.cos(d.angle) * d.distX;
+        ctx.fillStyle = currentAsteroid.veinColor;
+        ctx.shadowColor = currentAsteroid.glow;
+        ctx.shadowBlur = 6;
+        ctx.beginPath();
+        ctx.arc(centerX + dx, centerY + dy, d.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    });
+    ctx.restore();
+  }
 
   // 4. Dronlar & Otomatik Lazerler
   dronesList.forEach(drone => {
@@ -1125,6 +1540,68 @@ function render() {
       luckyUfo.active = false;
       luckyUfo.spawnCooldown = 45 + Math.random() * 30;
     }
+  }
+
+  // 6B. Şok Dalgaları (Expanding Shockwaves on Explosions)
+  for (let i = shockwaves.length - 1; i >= 0; i--) {
+    const sw = shockwaves[i];
+    sw.radius += sw.speed;
+    sw.life = 1 - (sw.radius / sw.maxRadius);
+
+    if (sw.life <= 0) {
+      shockwaves.splice(i, 1);
+      continue;
+    }
+
+    ctx.save();
+    ctx.strokeStyle = sw.color;
+    ctx.shadowColor = sw.color;
+    ctx.shadowBlur = 18;
+    ctx.lineWidth = Math.max(1, 5 * sw.life);
+    ctx.globalAlpha = sw.life * 0.85;
+    ctx.beginPath();
+    ctx.arc(sw.x, sw.y, sw.radius, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  // 6C. Kaya Şarapnelleri (Tumbling Shards & Rock Fragments)
+  for (let i = shards.length - 1; i >= 0; i--) {
+    const sh = shards[i];
+    sh.x += sh.vx;
+    sh.y += sh.vy;
+    sh.vx *= 0.98;
+    sh.vy *= 0.98;
+    sh.rotation += sh.rotSpeed;
+    sh.life -= sh.decay;
+
+    if (sh.life <= 0) {
+      shards.splice(i, 1);
+      continue;
+    }
+
+    ctx.save();
+    ctx.translate(sh.x, sh.y);
+    ctx.rotate(sh.rotation);
+    ctx.globalAlpha = sh.life;
+
+    ctx.fillStyle = sh.color;
+    ctx.shadowColor = sh.lightColor || "#00f0ff";
+    ctx.shadowBlur = 6 * sh.life;
+    ctx.beginPath();
+    const s = sh.size;
+    ctx.moveTo(-s * 0.5, -s * 0.7);
+    ctx.lineTo(s * 0.6, -s * 0.4);
+    ctx.lineTo(s * 0.4, s * 0.7);
+    ctx.lineTo(-s * 0.5, s * 0.3);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.strokeStyle = sh.lightColor || "#fff";
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    ctx.restore();
   }
 
   // 7. Parçacıklar
@@ -1623,11 +2100,6 @@ function buyUpgrade(key) {
     
     if (def.type === "auto") {
       updateDrones();
-      const unitDps = getAutoUnitEffectiveDPS(def);
-      const newTotal = state.upgrades[key] * unitDps;
-      showToast(`🤖 ${def.name} geliştirildi! (Adet: ${state.upgrades[key]} | Güç: ${formatNumber(newTotal)}/sn)`);
-    } else {
-      showToast(`${def.name} geliştirildi! (Sv. ${state.upgrades[key]})`);
     }
 
     checkRankProgression();
@@ -2191,13 +2663,19 @@ function executeWarp() {
   }
 }
 
-function showToast(msg) {
+function showToast(msg, isBoss = false) {
+  // Kullanıcı talebi: Bildirimler ekranı kaplamasın, SADECE BOSS bildirimi kalsın!
+  if (!isBoss) return;
   const box = document.getElementById("notification-box");
+  if (!box) return;
+  box.innerHTML = "";
   const toast = document.createElement("div");
-  toast.className = "toast";
+  toast.className = "toast toast-boss";
   toast.innerText = msg;
   box.appendChild(toast);
-  setTimeout(() => toast.remove(), 3200);
+  setTimeout(() => {
+    if (toast.parentElement) toast.remove();
+  }, 2200);
 }
 
 // ==================== KAYIT / YÜKLE / SIFIRLA ====================
