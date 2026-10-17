@@ -1677,29 +1677,35 @@ body {
 }
 
 /* ==================== MOBİL UYUMLULUK ==================== */
-/* ==================== MOBİL UYUMLULUK ==================== */
 @media (max-width: 900px) {
   #main-area {
     flex-direction: column;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
   }
   
   #space-viewport {
     flex: none;
-    min-height: auto;
-    padding: 8px 10px 4px 10px;
-    gap: 6px;
+    min-height: calc(100dvh - 105px);
+    padding: 6px 10px 4px 10px;
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   #shop-panel {
     max-width: 100%;
-    min-height: 400px;
-    flex: 1;
+    min-height: 480px;
+    flex: none;
+    border-left: none;
+    border-top: 1px solid var(--border-color);
   }
 
-  /* 2 Satırlı Ultra Kompakt Mobil HUD (60px Yükseklik) */
+  /* 2 Satırlı Ultra Kompakt Mobil HUD (55-60px) */
   #top-hud {
-    padding: 6px 8px;
+    padding: 5px 8px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 4px;
@@ -1724,7 +1730,7 @@ body {
   }
 
   .stat-label {
-    font-size: 0.52rem;
+    font-size: 0.5rem;
     letter-spacing: 0.2px;
     white-space: nowrap;
     overflow: hidden;
@@ -1750,7 +1756,7 @@ body {
   }
 
   .hud-btn {
-    padding: 4px;
+    padding: 3px;
     font-size: 0.85rem;
     flex: 1;
     display: flex;
@@ -1758,43 +1764,44 @@ body {
     justify-content: center;
     border-radius: 5px;
     height: 100%;
-    min-height: 26px;
+    min-height: 24px;
   }
 
   /* Hedef Asteroit & Can Barı */
   #target-info {
-    gap: 3px;
+    gap: 2px;
     width: 100%;
     max-width: 100%;
   }
 
   #target-info h2 {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     margin: 1px 0;
   }
 
   .target-badge {
-    font-size: 0.62rem;
-    padding: 2px 7px;
-    letter-spacing: 0.5px;
+    font-size: 0.58rem;
+    padding: 2px 6px;
+    letter-spacing: 0.4px;
   }
 
   .hp-bar-container {
-    height: 16px;
+    height: 14px;
     margin-top: 1px;
+    border-radius: 8px;
   }
 
   #hp-bar-text {
-    font-size: 0.68rem;
+    font-size: 0.65rem;
   }
 
   #boss-timer-container {
     margin-top: 1px;
-    font-size: 0.72rem;
+    font-size: 0.68rem;
   }
 
   #boss-timer-fill {
-    height: 6px;
+    height: 5px;
   }
 
   /* Aktif Yetenek Geri Sayımı */
@@ -1804,54 +1811,61 @@ body {
   }
 
   .active-skill-card {
-    padding: 3px 8px;
+    padding: 2px 7px;
     border-radius: 6px;
   }
 
   .asc-title {
-    font-size: 0.7rem;
+    font-size: 0.66rem;
   }
 
   .asc-effect {
-    font-size: 0.62rem;
+    font-size: 0.58rem;
   }
 
   .asc-timer {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 
   .asc-bar-track {
     height: 3px;
   }
 
-  /* Canvas Çerçevesi */
+  /* Geniş Canvas Çerçevesi (Asteroit Ekranı Doldurur) */
   #canvas-wrapper {
-    height: 200px;
-    min-height: 175px;
-    max-height: 230px;
+    flex: 1;
+    height: 320px;
+    min-height: 270px;
+    max-height: 380px;
     width: 100%;
+    touch-action: manipulation;
+  }
+
+  #game-canvas, #click-overlay {
+    touch-action: manipulation;
   }
 
   /* Yetenek Butonları */
   #skills-bar {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+    gap: 4px;
     width: 100%;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
 
   .skill-btn {
-    padding: 13px 3px 5px 3px;
+    padding: 10px 2px 4px 2px;
     gap: 2px;
     flex-direction: column;
     align-items: center;
     text-align: center;
     min-width: 0;
+    min-height: 48px;
   }
 
   .skill-icon {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     margin: 0;
   }
 
@@ -1863,40 +1877,210 @@ body {
   }
 
   .skill-name {
-    font-size: 0.66rem;
+    font-size: 0.64rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   .skill-desc {
-    font-size: 0.52rem;
+    font-size: 0.5rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   .skill-badge {
-    font-size: 0.5rem;
+    font-size: 0.48rem;
     padding: 1px 3px;
   }
 
   .skill-key-badge {
     top: 2px;
     left: 3px;
-    font-size: 0.5rem;
+    font-size: 0.48rem;
     padding: 0 2px;
   }
 
-  /* Mağaza Sekmeleri */
-  .tab-nav {
-    padding: 4px;
-    gap: 4px;
+  /* Hızlı İstatistikler (Sleek Slim Pill) */
+  #quick-stats {
+    padding: 3px 12px;
+    font-size: 0.68rem;
+    gap: 10px;
+    border-radius: 12px;
+    margin: 1px 0 2px 0;
+  }
+
+  /* Alt Menü & Mağaza Sekmeleri */
+  .tabs-header {
+    position: sticky;
+    top: 0;
+    z-index: 15;
+    background: rgba(8, 12, 22, 0.96);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 240, 255, 0.2);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
   }
 
   .tab-btn {
-    padding: 7px 4px;
-    font-size: 0.76rem;
+    padding: 8px 4px;
+    font-size: 0.72rem;
+    letter-spacing: 0.3px;
+  }
+
+  .tab-content {
+    padding: 10px 8px;
+  }
+
+  /* Geliştirme Kartları (Kompakt ve Şık) */
+  .shop-list {
+    gap: 6px;
+  }
+
+  .upgrade-card {
+    padding: 8px 10px;
+    border-radius: 8px;
+  }
+
+  .card-left {
+    gap: 8px;
+  }
+
+  .card-icon {
+    font-size: 1.35rem;
+    padding: 5px;
+    border-radius: 6px;
+  }
+
+  .card-details {
+    gap: 2px;
+  }
+
+  .card-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .card-desc {
+    font-size: 0.65rem;
+    line-height: 1.2;
+  }
+
+  .card-level {
+    font-size: 0.66rem;
+  }
+
+  .card-power-preview {
+    font-size: 0.6rem;
+    padding: 1px 4px;
+  }
+
+  .card-cost {
+    font-size: 0.78rem;
+  }
+
+  .buy-btn {
+    padding: 5px 8px;
+    font-size: 0.72rem;
+  }
+
+  /* Beceri Laboratuvarı Giriş */
+  .skills-tab-intro {
+    padding: 6px 8px;
+    margin-bottom: 6px;
+  }
+
+  .skills-tab-intro h4 {
+    font-size: 0.82rem;
+  }
+
+  .skills-tab-intro p {
+    font-size: 0.66rem;
+  }
+
+  /* Warp / Prestij Kartı */
+  .warp-container {
+    padding: 4px;
+  }
+
+  .warp-card {
+    padding: 14px 10px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+
+  .warp-icon {
+    font-size: 2.2rem;
+  }
+
+  .warp-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .warp-card p {
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+
+  .warp-info-compact {
+    padding: 6px 8px;
+    gap: 4px;
+  }
+
+  .wic-title {
+    font-size: 0.68rem;
+  }
+
+  .wic-tag {
+    font-size: 0.55rem;
+  }
+
+  .wic-row {
+    font-size: 0.64rem;
+    padding-top: 3px;
+  }
+
+  .warp-reward-box {
+    padding: 8px 10px;
+    gap: 4px;
+  }
+
+  .w-reward-row {
+    font-size: 0.72rem;
+  }
+
+  .highlight-val {
+    font-size: 0.95rem;
+  }
+
+  .highlight-score {
+    font-size: 0.88rem;
+  }
+
+  .warp-score-detail {
+    font-size: 0.58rem;
+  }
+
+  .warp-status-card {
+    padding: 8px 10px;
+    gap: 5px;
+  }
+
+  .w-status-header {
+    font-size: 0.7rem;
+  }
+
+  .w-stat-item {
+    font-size: 0.64rem;
+  }
+
+  .btn-warp {
+    padding: 9px 16px;
+    font-size: 0.82rem;
+  }
+
+  .warp-hint {
+    font-size: 0.6rem;
   }
 
   .warp-info-grid {
@@ -1934,12 +2118,24 @@ body {
   .hud-btn {
     padding: 3px;
     font-size: 0.8rem;
-    min-height: 24px;
+    min-height: 22px;
+  }
+
+  #space-viewport {
+    min-height: calc(100dvh - 100px);
+    padding: 4px 6px 3px 6px;
+    gap: 3px;
   }
 
   #canvas-wrapper {
-    height: 180px;
-    min-height: 160px;
+    height: 310px;
+    min-height: 270px;
+    max-height: 370px;
+  }
+
+  .tab-btn {
+    padding: 7px 3px;
+    font-size: 0.68rem;
   }
 
   .lb-guide-grid {
