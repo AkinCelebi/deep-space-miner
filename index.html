@@ -9,10 +9,12 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
   <title>Deep Space Miner - Galaktik Madencilik & Otomasyon</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3.2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- CrazyGames SDK v3 -->
+  <script src="https://sdk.crazygames.com/crazygames-sdk-v3.js"></script>
 </head>
 <body>
   <div id="game-container">
@@ -98,6 +100,20 @@
         <div id="canvas-wrapper">
           <canvas id="game-canvas"></canvas>
           <div id="click-overlay"></div>
+        </div>
+
+        <!-- Reklamla Güçlendirme Çubuğu (CrazyGames Rewarded Ads) -->
+        <div id="ad-boosters-bar">
+          <button id="btn-boost-click" class="ad-boost-btn" title="Kısa bir reklam izleyerek 1 dakika boyunca tıklama kazı gücünü 2 katına çıkar!">
+            <span class="boost-icon">📺🔨</span>
+            <span class="boost-label">2x TIKLAMA</span>
+            <span class="boost-timer" id="boost-click-timer">1 Dk (Reklam)</span>
+          </button>
+          <button id="btn-boost-auto" class="ad-boost-btn" title="Kısa bir reklam izleyerek 2 dakika boyunca otomatik madencilik üretimini 2 katına çıkar!">
+            <span class="boost-icon">📺⚡</span>
+            <span class="boost-label">2x OTO MADEN</span>
+            <span class="boost-timer" id="boost-auto-timer">2 Dk (Reklam)</span>
+          </button>
         </div>
 
         <!-- Yetenek Çubuğu (Active Skills) -->
@@ -476,7 +492,7 @@
 
   </div>
 
-  <script src="audio.js"></script>
-  <script src="game.js"></script>
+  <script src="audio.js?v=3.2"></script>
+  <script src="game.js?v=3.2"></script>
 </body>
 </html>
