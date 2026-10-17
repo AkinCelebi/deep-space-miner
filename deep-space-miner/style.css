@@ -35,6 +35,7 @@ body {
   font-size: 16px;
   overflow: hidden;
   height: 100vh;
+  height: 100dvh;
   width: 100vw;
   background-image: 
     radial-gradient(circle at 20% 30%, rgba(168, 85, 247, 0.08) 0%, transparent 40%),
@@ -45,6 +46,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  height: 100dvh;
   width: 100vw;
 }
 
@@ -1675,6 +1677,7 @@ body {
 }
 
 /* ==================== MOBİL UYUMLULUK ==================== */
+/* ==================== MOBİL UYUMLULUK ==================== */
 @media (max-width: 900px) {
   #main-area {
     flex-direction: column;
@@ -1682,18 +1685,218 @@ body {
   }
   
   #space-viewport {
-    min-height: 50vh;
+    flex: none;
+    min-height: auto;
+    padding: 8px 10px 4px 10px;
+    gap: 6px;
   }
 
   #shop-panel {
     max-width: 100%;
-    min-height: 45vh;
+    min-height: 400px;
+    flex: 1;
   }
 
+  /* 2 Satırlı Ultra Kompakt Mobil HUD (60px Yükseklik) */
   #top-hud {
-    padding: 10px 14px;
-    flex-wrap: wrap;
-    gap: 10px;
+    padding: 6px 8px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hud-stat {
+    padding: 3px 6px;
+    gap: 5px;
+    border-radius: 6px;
+    min-width: 0;
+  }
+
+  .hud-stat .icon {
+    font-size: 1.05rem;
+    flex-shrink: 0;
+  }
+
+  .stat-info {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .stat-label {
+    font-size: 0.52rem;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.1;
+  }
+
+  .stat-value {
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+  }
+
+  .hud-controls {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .hud-btn {
+    padding: 4px;
+    font-size: 0.85rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    height: 100%;
+    min-height: 26px;
+  }
+
+  /* Hedef Asteroit & Can Barı */
+  #target-info {
+    gap: 3px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #target-info h2 {
+    font-size: 1.15rem;
+    margin: 1px 0;
+  }
+
+  .target-badge {
+    font-size: 0.62rem;
+    padding: 2px 7px;
+    letter-spacing: 0.5px;
+  }
+
+  .hp-bar-container {
+    height: 16px;
+    margin-top: 1px;
+  }
+
+  #hp-bar-text {
+    font-size: 0.68rem;
+  }
+
+  #boss-timer-container {
+    margin-top: 1px;
+    font-size: 0.72rem;
+  }
+
+  #boss-timer-fill {
+    height: 6px;
+  }
+
+  /* Aktif Yetenek Geri Sayımı */
+  #active-buffs-container {
+    gap: 4px;
+    margin-top: 2px;
+  }
+
+  .active-skill-card {
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+
+  .asc-title {
+    font-size: 0.7rem;
+  }
+
+  .asc-effect {
+    font-size: 0.62rem;
+  }
+
+  .asc-timer {
+    font-size: 0.75rem;
+  }
+
+  .asc-bar-track {
+    height: 3px;
+  }
+
+  /* Canvas Çerçevesi */
+  #canvas-wrapper {
+    height: 200px;
+    min-height: 175px;
+    max-height: 230px;
+    width: 100%;
+  }
+
+  /* Yetenek Butonları */
+  #skills-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    width: 100%;
+    margin-bottom: 3px;
+  }
+
+  .skill-btn {
+    padding: 13px 3px 5px 3px;
+    gap: 2px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .skill-icon {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .skill-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .skill-name {
+    font-size: 0.66rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .skill-desc {
+    font-size: 0.52rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .skill-badge {
+    font-size: 0.5rem;
+    padding: 1px 3px;
+  }
+
+  .skill-key-badge {
+    top: 2px;
+    left: 3px;
+    font-size: 0.5rem;
+    padding: 0 2px;
+  }
+
+  /* Mağaza Sekmeleri */
+  .tab-nav {
+    padding: 4px;
+    gap: 4px;
+  }
+
+  .tab-btn {
+    padding: 7px 4px;
+    font-size: 0.76rem;
   }
 
   .warp-info-grid {
@@ -1706,14 +1909,47 @@ body {
 }
 
 @media (max-width: 600px) {
+  #top-hud {
+    padding: 4px 6px;
+    gap: 3px;
+  }
+
+  .hud-stat {
+    padding: 2px 5px;
+    gap: 4px;
+  }
+
+  .hud-stat .icon {
+    font-size: 0.95rem;
+  }
+
+  .stat-label {
+    font-size: 0.48rem;
+  }
+
+  .stat-value {
+    font-size: 0.78rem;
+  }
+
+  .hud-btn {
+    padding: 3px;
+    font-size: 0.8rem;
+    min-height: 24px;
+  }
+
+  #canvas-wrapper {
+    height: 180px;
+    min-height: 160px;
+  }
+
   .lb-guide-grid {
     grid-template-columns: 1fr;
   }
 
   .lb-table-head,
   .lb-table-row {
-    grid-template-columns: 60px 1fr 90px 100px;
-    font-size: 0.78rem;
+    grid-template-columns: 50px 1fr 80px 85px;
+    font-size: 0.72rem;
   }
 }
 
