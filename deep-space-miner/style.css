@@ -948,35 +948,41 @@ body {
 /* ==================== BİLDİRİM KUTUSU ==================== */
 #notification-box {
   position: fixed;
-  bottom: 24px;
-  left: 24px;
+  top: 65px;
+  bottom: auto;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  z-index: 100;
-  pointer-events: none;
+  align-items: center;
+  gap: 6px;
+  z-index: 1000;
+  pointer-events: none !important;
+  max-width: 90vw;
 }
 
 .toast {
-  background: rgba(10, 15, 30, 0.95);
+  pointer-events: none !important;
+  user-select: none;
+  background: rgba(10, 15, 30, 0.94);
   border: 1px solid var(--cyan);
-  box-shadow: var(--cyan-glow);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.45);
   color: #fff;
-  padding: 10px 18px;
-  border-radius: 8px;
+  padding: 7px 16px;
+  border-radius: 20px;
   font-family: var(--font-heading);
-  font-size: 0.85rem;
-  animation: slideIn 0.3s ease, fadeOut 0.4s ease 2.6s forwards;
+  font-size: 0.75rem;
+  letter-spacing: 0.4px;
+  text-align: center;
+  white-space: nowrap;
+  animation: toastPop 1.6s ease forwards;
 }
 
-@keyframes slideIn {
-  from { transform: translateX(-50px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+@keyframes toastPop {
+  0% { transform: translateY(-12px); opacity: 0; }
+  15% { transform: translateY(0); opacity: 1; }
+  75% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-12px); opacity: 0; }
 }
 
 /* ==================== MODAL PENCERELER ==================== */
